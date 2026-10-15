@@ -421,38 +421,5 @@ For open-source models, we locate the answer token in the response and read the 
 
 ⭐ Star this repo to get notified when the code and data are released.
 
-## 📝 Citation
-
-If you find ViSiP-Bench or MAPS useful in your research, please consider citing:
-
-```bibtex
-@inproceedings{ma2026seeing,
-  title     = {Seeing is Believing: Benchmarking and Mitigating the Interference of Language Priors on Visual Perception in {MLLM}s},
-  author    = {Ma, Li and Zhuang, Yan and Deng, Jiawen and Ren, Fuji},
-  booktitle = {Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing},
-  year      = {2026}
-}
-```
-
-## ⚖️ License & Ethics
-
-- **Code:** released under the TODO License.
-- **Data:** ViSiP-Bench is released under TODO (e.g., CC BY-NC 4.0) for **research purposes only**. Copyright of web-sourced images remains with the original owners. If you are an owner and want an image removed, please contact us.
-- Generative models (Claude Opus 4.7, GPT-Image-2, Nano Banana 2) were used through their official APIs under each provider's usage policy. All generated and web-sourced content passed the same three-criteria human review.
-- Human annotators were volunteers, fully informed about the task, and fairly compensated. All images show ordinary, if uncommon, real-world scenes, with no violent or explicit content.
-
-## 🙏 Acknowledgments
-
-This work was supported by the National Natural Science Foundation of China (Grant No. U24A20250), the Sichuan Science and Technology Program (No. 2025ZNSFSC1487), the Fundamental Research Funds for the Central Universities (No. ZYGX2024J022 and No. ZYGX2024Z005), and the Science, Technology and Innovation Project of Shenzhen Longhua District (No. 20260309G23410662).
-
-We also thank the authors of [InternVL](https://github.com/OpenGVLab/InternVL), [Qwen-VL](https://github.com/QwenLM), and [LLaVA-OneVision](https://github.com/LLaVA-VL/LLaVA-NeXT) for their open-source models.
-
-## 📬 Contact
-
-For questions or discussion, please [open an issue](https://github.com/TODO/ViSiP-Bench/issues) or email:
-
-- Li Ma: 202421080935@std.uestc.edu.cn
-- Jiawen Deng: dengjw@uestc.edu.cn
-- Fuji Ren: renfuji@uestc.edu.cn
 
 <p align="right"><a href="#top">⬆ Back to top</a></p>
