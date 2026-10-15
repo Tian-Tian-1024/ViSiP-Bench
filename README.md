@@ -38,13 +38,16 @@ School of Computer Science and Engineering, University of Electronic Science and
 - [Metrics](#-metrics)
 - [MAPS](#-maps-model-aware-prior-softening)
 - [Results](#-results)
+- [Quick Start](#-quick-start)
 - [Evaluation Protocol](#-evaluation-protocol)
 - [Release Plan](#-release-plan)
 - [Citation](#-citation)
 
 ## 🔥 News
 
-- **[2026-08]** 🎉 Our paper has been accepted to **EMNLP 2026**.
+- **[2026-xx]** 🎉 Our paper has been accepted to **EMNLP 2026**.
+- **[2026-xx]** 📄 The paper is available on [arXiv](https://arxiv.org/abs/TODO).
+- **[Coming soon]** 📦 ViSiP-Bench dataset, evaluation code, and MAPS training code.
 
 ## 📖 Overview
 
@@ -344,6 +347,56 @@ A low α selects many priors the model does not strongly hold, which raises FC a
 
 </details>
 
+## 🚀 Quick Start
+
+```bash
+git clone https://github.com/TODO/ViSiP-Bench.git && cd ViSiP-Bench
+pip install -r requirements.txt
+
+# Sanity check without a GPU or API key
+python evaluate.py run --model dummy --data data/example
+```
+
+**Open-source models** (PAR / Acc / FC / VIG), averaged over 3 runs as in the paper:
+
+```bash
+python evaluate.py run --model qwen3-vl-8b --data data/ViSiP-Bench --num-runs 3
+python evaluate.py run --model hf:/path/to/checkpoint --name my-model --data data/ViSiP-Bench
+```
+
+**Proprietary models** (PAR / Acc / FC). Keys are read from `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, and `GEMINI_API_KEY`:
+
+```bash
+python evaluate.py run --model gpt-5.5                --data data/ViSiP-Bench --num-workers 8
+python evaluate.py run --model claude-sonnet-4.6      --data data/ViSiP-Bench --num-workers 8
+python evaluate.py run --model gemini-3-flash-preview --data data/ViSiP-Bench --num-workers 8
+python evaluate.py run --model openai_compatible:Qwen/Qwen3-VL-8B-Instruct \
+    --model-args '{"base_url": "http://localhost:8000/v1"}' --data data/ViSiP-Bench
+```
+
+**Re-score and compare** (leaderboard + cross-model prior agreement matrix):
+
+```bash
+python evaluate.py score   --results results/qwen3-vl-8b
+python evaluate.py compare --results results/* --output results/leaderboard.md
+```
+
+Runs resume automatically if interrupted. Results are written to `results/<name>/`, which contains `config.json`, `run{k}/predictions.jsonl`, and `metrics.json`. Run `python evaluate.py run --help` to see all presets and options.
+
+<details>
+<summary><b>📄 Data format</b></summary>
+<br>
+
+One JSON object per line. Image paths are relative to the annotation file. See [`data/example`](data/example).
+
+```json
+{"id": "sci_math_0001", "category": "Scientific & Mathematic", "image": "images/sci_math_0001.png",
+ "question": "What answer is written for 77+37 in the picture?",
+ "options": {"A": "114", "B": "110", "C": "104", "D": "120"}, "answer": "B"}
+```
+
+</details>
+
 ## 🧾 Evaluation Protocol
 
 To compare the Blank and Visual conditions fairly, **the same prompt template is used for both**. Any difference in responses then comes only from whether the image is present.
@@ -363,7 +416,7 @@ For open-source models, we locate the answer token in the response and read the 
 
 - [x] Paper
 - [ ] ViSiP-Bench dataset (images + annotations)
-- [ ] Evaluation code (PAR / Filtered Accuracy / VIG)
+- [x] Evaluation code (PAR / Filtered Accuracy / VIG)
 - [ ] Baseline implementations (VFP, CoT, AS, VCD, PAI, Post-hoc, NaPO)
 - [ ] MAPS pipeline and model-specific rare-but-real corpora
 - [ ] MAPS LoRA checkpoints

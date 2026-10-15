@@ -1,0 +1,19 @@
+# Core (scoring, data loading, dummy backend)
+numpy>=1.24
+pillow>=10.0
+tqdm>=4.66
+packaging>=23.0
+
+# Open-source models (Hugging Face backend). Qwen3-VL / Qwen3.5 / InternVL3.5-HF need a recent transformers.
+torch>=2.3
+transformers>=4.57.0
+accelerate>=0.33
+qwen-vl-utils>=0.0.14  # optional, only needed by some Qwen processors
+
+# Proprietary models (install only what you use)
+openai>=1.40
+anthropic>=0.40
+google-genai>=1.0
+
+# Tests
+pytest>=8.0
