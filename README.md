@@ -44,9 +44,7 @@ School of Computer Science and Engineering, University of Electronic Science and
 
 ## 🔥 News
 
-- **[2026-xx]** 🎉 Our paper has been accepted to **EMNLP 2026**.
-- **[2026-xx]** 📄 The paper is available on [arXiv](https://arxiv.org/abs/TODO).
-- **[Coming soon]** 📦 ViSiP-Bench dataset, evaluation code, and MAPS training code.
+- **[2026-08]** 🎉 Our paper has been accepted to **EMNLP 2026**.
 
 ## 📖 Overview
 
