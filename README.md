@@ -45,7 +45,7 @@ School of Computer Science and Engineering, University of Electronic Science and
 
 ## 🔥 News
 
-- **[2026-08]** 🎉 Our paper has been accepted to **EMNLP 2026**.
+- **[2026-08]** 🎉 Our paper has been accepted to **EMNLP 2026 (main)**.
 
 ## 📖 Overview
 
